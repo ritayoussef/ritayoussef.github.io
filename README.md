@@ -1,4 +1,4 @@
- # Rita Youssef - Portfolio
+# Rita Youssef - Portfolio
  
 ![Background](./data/light_purple_gradient_background.jpg)
 
