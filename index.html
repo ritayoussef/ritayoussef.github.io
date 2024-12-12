@@ -11,6 +11,7 @@
             padding: 0;
             background: linear-gradient(120deg, #5d45a0, #a6d4fa);
             color: white;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -42,6 +43,15 @@
             opacity: 0.8;
         }
 
+        .visitor-count {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .visitor-count p {
+            font-size: 1.2em;
+        }
+
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -66,6 +76,61 @@
         .section h2 {
             font-size: 2em;
             margin-bottom: 20px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 20px;
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: -40px;
+            animation: bounce 2s infinite;
+        }
+
+        .arrow a {
+            text-decoration: none;
+            color: white;
+            font-size: 2em;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .card h2 {
+            margin-top: 0;
         }
 
         .projects {
@@ -104,11 +169,40 @@
             text-decoration: none;
             color: #a6d4fa;
         }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .skill-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .stats-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
 
         footer {
-            background: rgba(0, 0, 0, 0.8);
             text-align: center;
             padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 1.5em;
             color: white;
         }
 
@@ -128,9 +222,16 @@
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#stats">Stats</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <div class="visitor-count">
+        <p><strong>Visitor Count</strong></p>
+        <img src="https://profile-counter.glitch.me/ritayoussef/count.svg" alt="Visitor's Count" />
+    </div>
 
     <section class="hero">
         <h2>Welcome to My Portfolio</h2>
@@ -138,8 +239,32 @@
     </section>
 
     <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>I am a Computer Science student passionate about creating web applications and games. I enjoy integrating design and development to craft engaging digital experiences.</p>
+        <div class="profile">
+            <img src="./data/profile.jpg" alt="Profile Picture">
+            <h2>Computer Science Student 👩🏽‍💻</h2>
+            <div class="arrow">
+                <a href="#about-details">&#8595;</a>
+            </div>
+        </div>
+        <div id="about-details" class="card">
+            <h2>About Me</h2>
+            <p>
+                📝 I love integrating my aesthetics and creativity into computer science projects.<br>
+                🎮 I have been a gamer since I was 6 years old.<br>
+                🎡 Fun fact: I still play Claw on my PC 🖥️.<br>
+                🌐 I'm currently creating my own website and developing a game using JavaScript.<br>
+                📚 I'm currently learning <strong>React.js</strong>.<br>
+                🚀 I will start my first internship in <strong>January 2025</strong> as a Web Developer.<br>
+                💬 Ask me about <strong>JavaScript, HTML/CSS, C#, SQL, Kotlin, Python</strong>, and more.
+            </p>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="card">
+            <h2>Education</h2>
+            <p>DEC in Computer Science 🖥️ - expected in May 2025 👩🏽‍🎓</p>
+        </div>
     </section>
 
     <section id="projects" class="section">
@@ -152,7 +277,7 @@
             </div>
             <div class="project-card">
                 <h3>DutchTreat Web App</h3>
-                <p>A full-stack web application for managing online transactions, built with ASP.NET and React.</p>
+                <p>A full-stack web application for managing online transactions, built with MVC ASP.NET.</p>
                 <a href="https://github.com/ritayoussef/DutchTreat_Web_App.git" target="_blank">View on GitHub</a>
             </div>
             <div class="project-card">
@@ -168,14 +293,59 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaborations or just to say hi!</p>
-        <p>Email: <a href="mailto:youssef.rita14@gmail.com">youssef.rita14@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rita-youssef-759965223/" target="_blank">LinkedIn Profile</a></p>
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="./data/javascript.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="./data/typescript.webp" alt="TypeScript">
+                <p>TypeScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="./data/htmlcss.png" alt="HTML/CSS">
+                <p>HTML/CSS</p>
+            </div>
+            <div class="skill-card">
+                <img src="./data/sql.png" alt="SQL">
+                <p>SQL</p>
+            </div>
+            <div class="skill-card">
+                <img src="./data/csharp.png" alt="C#">
+                <p>C#</p>
+            </div>
+            <div class="skill-card">
+                <img src="./data/kotlin.png" alt="Kotlin">
+                <p>Kotlin</p>
+            </div>
+            <div class="skill-card">
+                <img src="./data/python.png" alt="Python">
+                <p>Python</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="section">
+        <h2>Stats</h2>
+        <div class="stats-container">
+            <img width=390 src="https://github-readme-stats.vercel.app/api?username=ritayoussef&theme=transparent&count_private=true&show_icons=true&rank_icon=github&locale=en" alt="ritayoussef's GitHub Stats" />
+            <img width=325 src="https://github-readme-stats.vercel.app/api/top-langs?username=ritayoussef&theme=transparent&layout=donut&hide=css&langs_count=8&border_radius=10&show_icons=true&locale=en" alt="ritayoussef's Most Used Languages" />
+        </div>
     </section>
 
     <footer>
+        <p><strong>Connect with me on</strong> <a href="https://github.com/ritayoussef" target="_blank">GitHub</a></p>
+        <div align="center">
+            <a href="mailto:youssef.rita14@gmail.com">
+                <img src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red" />
+            </a>
+            <a href="https://www.linkedin.com/in/rita-youssef-759965223/" target="_blank">
+                <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+            </a>
+        </div>
+        <hr>
         <p>&copy; 2024 Rita Youssef | <a href="#">Back to Top</a></p>
     </footer>
 </body>
