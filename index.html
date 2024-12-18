@@ -36,6 +36,7 @@
             text-decoration: none;
             color: white;
             font-size: 1.2em;
+            font-weight: bold;
             transition: opacity 0.3s;
         }
 
@@ -43,15 +44,7 @@
             opacity: 0.8;
         }
 
-        .visitor-count {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .visitor-count p {
-            font-size: 1.2em;
-        }
-
+       
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -67,6 +60,117 @@
             max-width: 800px;
             margin: 0 auto;
         }
+          /* Typing Animation */
+          .typewriter h1 {
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            font-size: 2.5em;
+            animation: typing 8s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        #typewriter-text {
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 2.5em;
+            border-right: .15em solid white;
+            letter-spacing: .15em;
+            animation: typing-effect 8s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing-effect {
+            0% { width: 0; }
+            50% { width: 100%; }
+            50.1%, 100% { width: 0; }
+        }
+        .mouse-scroll {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .mouse {
+            width: 25px;
+            height: 45px;
+            border: 2px solid white;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .mouse::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            animation: scroll 1.5s infinite;
+        }
+
+        @keyframes scroll {
+            0% { top: 10px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+
+        /* Section Fade-In Animation */
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tools-container, .certifications-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .tool-card, .cert-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s;
+        }
+
+        .tool-card:hover, .cert-card:hover {
+            transform: scale(1.05);
+        }
+
+        .tool-card img, .cert-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .tool-card a, .cert-card a {
+            color: #a6d4fa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
 
         .section {
             padding: 60px 20px;
@@ -127,6 +231,7 @@
             margin: 20px auto;
             max-width: 800px;
             text-align: left;
+            
         }
 
         .card h2 {
@@ -169,6 +274,7 @@
             text-decoration: none;
             color: #a6d4fa;
         }
+        
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -183,6 +289,12 @@
             border-radius: 10px;
             text-align: center;
             width: 150px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .skill-card img {
@@ -191,12 +303,6 @@
             margin-bottom: 10px;
         }
 
-        .stats-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
         .buttons {
             margin-top: 30px;
             
@@ -215,6 +321,24 @@
             background: #a6d4fa;
         }
 
+        .btn {
+            margin-top: 20px;
+            background: white;
+            color: #5d45a0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #a6d4fa;
+            transform: scale(1.05);
+        }
+
+
         footer {
             text-align: center;
             padding: 20px;
@@ -224,7 +348,7 @@
         }
 
         footer a {
-            color: #a6d4fa;
+            color: #5d45a0;
             text-decoration: none;
         }
 
@@ -240,19 +364,18 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#stats">Stats</a>
+            <a href="#tools">Tools</a>
+            <a href="#certifications">Certificates</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
-    <!-- <div class="visitor-count">
-        <p><strong>Visitor Count</strong></p>
-        <img src="https://profile-counter.glitch.me/ritayoussef/count.svg" alt="Visitor's Count" />
-    </div> -->
-
+    
     <section class="hero">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Discover my journey as a Computer Science student, my passion for development, and the projects I've crafted with creativity and dedication.</p>
+        <h1 id="typewriter-text"></h1>
+        <p>Discover my journey as a 3rd year Computer Science student, my passion for development, and my creative projects.</p>
+        <div class="mouse-scroll">
+            <div class="mouse"></div>
+        </div>
     </section>
 
     <section id="about" class="section">
@@ -269,7 +392,6 @@
                 📝 I love integrating my aesthetics and creativity into computer science projects.<br>
                 🎮 I have been a gamer since I was 6 years old.<br>
                 🎡 Fun fact: I still play Claw on my PC 🖥️.<br>
-                🌐 I'm currently creating my own website and developing a game using JavaScript.<br>
                 📚 I'm currently learning <strong>React.js</strong>.<br>
                 🚀 I will start my first internship in <strong>January 2025</strong> as a Web Developer.<br>
                 💬 Ask me about <strong>JavaScript, HTML/CSS, C#, SQL, Kotlin, Python</strong>, and more.
@@ -294,22 +416,30 @@
             <div class="project-card">
                 <h3>BIXI Rental</h3>
                 <p>An application to manage bike rentals efficiently, featuring robust backend systems and user-friendly design.</p>
-                <a href="https://github.com/ritayoussef/BIXI_Rental.git" target="_blank">View on GitHub</a>
+                <a href="https://github.com/ritayoussef/BIXI_Rental.git" target="_blank">
+                    <button class="btn">View on GitHub</button>
+                </a>
             </div>
             <div class="project-card">
                 <h3>DutchTreat Web App</h3>
-                <p>A Web application using MVC ASP.NET Core designed to handle e-commerce-like functionalities, including a Contact Us page with advanced validation, data storage, and email integration. </p>
-                <a href="https://github.com/ritayoussef/DutchTreat_Web_App.git" target="_blank">View on GitHub</a>
+                <p>A Web application using MVC ASP.NET Core designed to handle e-commerce-like functionalities, including a Contact Us page with advanced validation.</p>
+                <a href="https://github.com/ritayoussef/DutchTreat_Web_App.git" target="_blank">
+                    <button class="btn">View on GitHub</button>
+                </a>
             </div>
             <div class="project-card">
                 <h3>SportexApp</h3>
                 <p>A fitness-focused mobile app developed using Kotlin, encouraging users to meet their activity goals.</p>
-                <a href="https://github.com/ritayoussef/SportexApp.git" target="_blank">View on GitHub</a>
+                <a href="https://github.com/ritayoussef/SportexApp.git" target="_blank">
+                    <button class="btn">View on GitHub</button>
+                </a>
             </div>
             <div class="project-card">
                 <h3>Pinteresting</h3>
                 <p>A Pinterest-inspired web application for organizing and sharing visual content, created with modern web technologies.</p>
-                <a href="https://github.com/ritayoussef/Pinteresting.git" target="_blank">View on GitHub</a>
+                <a href="https://github.com/ritayoussef/Pinteresting.git" target="_blank">
+                    <button class="btn">View on GitHub</button>
+                </a>
             </div>
         </div>
     </section>
@@ -348,13 +478,59 @@
         </div>
     </section>
 
-    <section id="stats" class="section">
-        <h2>Stats</h2>
-        <div class="stats-container">
-            <img width=390 src="https://github-readme-stats.vercel.app/api?username=ritayoussef&theme=transparent&count_private=true&show_icons=true&rank_icon=github&locale=en" alt="ritayoussef's GitHub Stats" />
-            <img width=325 src="https://github-readme-stats.vercel.app/api/top-langs?username=ritayoussef&theme=transparent&layout=donut&hide=css&langs_count=8&border_radius=10&show_icons=true&locale=en" alt="ritayoussef's Most Used Languages" />
+    <section id="tools" class="section">
+        <h2>Tools</h2>
+        <div class="tools-container">
+            <div class="tool-card">
+                <img src="./data/vs.png" alt="Visual Studio">
+                <p>Visual Studio</p>
+            </div>
+            <div class="tool-card">
+                <img src="./data/vscode.png" alt="VS Code">
+                <p>Visual Studio Code</p>
+            </div>
+            <div class="tool-card">
+                <img src="./data/github.png" alt="GitHub">
+                <p>GitHub</p>
+            </div>
+            <div class="tool-card">
+                <img src="./data/pycharm.png" alt="PyCharm">
+                <p>PyCharm</p>
+            </div>
+            <div class="tool-card">
+                <img src="./data/androidstudio.png" alt="Android Studio">
+                <p>Android Studio</p>
+            </div>
+            <div class="tool-card">
+                <img src="./data/cisco.png" alt="Cisco Packet Tracer">
+                <p>Cisco Packet Tracer</p>
+            </div>
+            <div class="tool-card">
+                <img src="./data/jira.png" alt="Jira">
+                <p>Jira</p>
+            </div>
         </div>
     </section>
+  
+    
+    <section id="certifications" class="section">
+        <h2>Certifications</h2>
+        <div class="certifications-container">
+            <div class="cert-card">
+                <p>ASP.NET Core: Token-Based Authentication</p>
+                <a href="./data/CertificateOfCompletion_ASP.NET Core TokenBased Authentication.pdf" download="CertificateOfCompletion_ASP.NET Core TokenBased Authentication.pdf"><button class="btn">View Certificate</button></a>
+            </div>
+            <div class="cert-card">
+                <p>Security in ASP.NET Core</p>
+                <a href="./data/CertificateOfCompletion_Security in ASP.NET Core.pdf" download="CertificateOfCompletion_Security in ASP.NET Core.pdf"><button class="btn">View Certificate</button></a>
+            </div>
+            <div class="cert-card">
+                <p>Azure Microservices with .NET Core</p>
+                <a href="./data/CertificateOfCompletion_Azure Microservices with .NET Core for Developers.pdf" download="CertificateOfCompletion_Azure Microservices with .NET Core for Developers.pdf"><button class="btn">View Certificate</button></a>
+            </div>
+        </div>
+    </section>
+
 <section  id="contact">
     <footer>
         <p><strong>Connect with me on</strong> <a href="https://github.com/ritayoussef" target="_blank">GitHub</a></p>
@@ -370,5 +546,47 @@
         <p>&copy; 2024 Rita Youssef | <a href="#">Back to Top</a></p>
     </footer>
 </section>
+
+<script>
+     const messages = [
+            "Hi, My Name is Rita Youssef",
+            "I'm a Computer Science Student"
+        ];
+        const typewriter = document.getElementById('typewriter-text');
+        let i = 0, j = 0;
+        let currentMessage = "";
+        let deleting = false;
+
+        function typeEffect() {
+            if (!deleting && j < messages[i].length) {
+                currentMessage += messages[i][j];
+                j++;
+            } else if (deleting && j > 0) {
+                currentMessage = currentMessage.slice(0, -1);
+                j--;
+            } else {
+                deleting = !deleting;
+                if (!deleting) {
+                    i = (i + 1) % messages.length;
+                }
+            }
+            typewriter.textContent = currentMessage;
+            setTimeout(typeEffect, deleting ? 100 : 100);
+        }
+        typeEffect();
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
 </body>
 </html>
