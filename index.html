@@ -35,7 +35,7 @@
         header nav a {
             text-decoration: none;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-weight: bold;
             transition: opacity 0.3s;
         }
@@ -60,39 +60,23 @@
             max-width: 800px;
             margin: 0 auto;
         }
-          /* Typing Animation */
-          .typewriter h1 {
+         
+        .typewriter-container {
+            position: relative;
+            display: inline-block;
             overflow: hidden;
-            border-right: .15em solid white;
             white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
             font-size: 2.5em;
-            animation: typing 8s steps(30, end), blink-caret 0.75s step-end infinite;
+            border-right: 2px solid white;
+            letter-spacing: .15em;
+            width: 100%;
+            max-width: 100%;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
         #typewriter-text {
             overflow: hidden;
             white-space: nowrap;
             font-size: 2.5em;
-            border-right: .15em solid white;
-            letter-spacing: .15em;
-            animation: typing-effect 8s steps(30, end), blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing-effect {
-            0% { width: 0; }
-            50% { width: 100%; }
-            50.1%, 100% { width: 0; }
         }
         .mouse-scroll {
             display: flex;
@@ -189,6 +173,7 @@
             margin: 40px auto;
             text-align: center;
             position: relative;
+            font-size: 1.2em;
         }
 
         .profile img {
@@ -231,11 +216,13 @@
             margin: 20px auto;
             max-width: 800px;
             text-align: left;
+            font-size: 1.2em;
             
         }
 
         .card h2 {
             margin-top: 0;
+            
         }
 
         .projects {
