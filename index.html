@@ -44,7 +44,6 @@
             opacity: 0.8;
         }
 
-       
         .hero {
             text-align: center;
             padding: 80px 20px;
@@ -60,7 +59,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-         
+
         .typewriter-container {
             position: relative;
             display: inline-block;
@@ -78,6 +77,7 @@
             white-space: nowrap;
             font-size: 2.5em;
         }
+
         .mouse-scroll {
             display: flex;
             justify-content: center;
@@ -122,6 +122,7 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         .tools-container, .certifications-container {
             display: flex;
             flex-wrap: wrap;
@@ -153,8 +154,6 @@
             text-decoration: none;
             font-weight: bold;
         }
-
-
 
         .section {
             padding: 60px 20px;
@@ -217,12 +216,10 @@
             max-width: 800px;
             text-align: left;
             font-size: 1.2em;
-            
         }
 
         .card h2 {
             margin-top: 0;
-            
         }
 
         .projects {
@@ -261,7 +258,7 @@
             text-decoration: none;
             color: #a6d4fa;
         }
-        
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -292,8 +289,8 @@
 
         .buttons {
             margin-top: 30px;
-            
         }
+
         .buttons a {
             display: inline-block;
             text-decoration: none;
@@ -304,6 +301,7 @@
             font-weight: bold;
             transition: background 0.3s;
         }
+
         .buttons a:hover {
             background: #a6d4fa;
         }
@@ -325,7 +323,6 @@
             transform: scale(1.05);
         }
 
-
         footer {
             text-align: center;
             padding: 20px;
@@ -341,6 +338,41 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2, .hero p {
+                font-size: 1.5em;
+            }
+
+            .projects {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .tools-container, .certifications-container, .skills-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .project-card, .skill-card, .tool-card {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            footer {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
